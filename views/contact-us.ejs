@@ -1,20 +1,30 @@
 <%- include("partials/header") -%>
 
-    <main class="page contact-us-page">
-        <section class="clean-block clean-form dark">
-            <div class="container">
-                <div class="block-heading">
-                    <h2 class="text-info">Keep In Touch</h2>
-                    <p>Have an analytics need or want to know more about our services?&nbsp;<br>please write to us at&nbsp;&nbsp;and we will get back to you as soon as possible.<br><br></p>
-                    <p><b>Email: </b><a href="admin@unarai.com?subject=feedback"> admin@unarai.com</a></p>
-                </div><form action="mailto:visalivallu@gmail.com" method="post" enctype="text/plain">
-    <div class="mb-3"><label class="form-label" for="name">Name</label><input id="name" class="form-control" type="text" name="name" /></div>
-
-    <div class="mb-3"><label class="form-label" for="email">Email</label><input id="email" class="form-control" type="email" name="email" /></div>
-    <div class="mb-3"><label class="form-label" for="message">Message</label><textarea id="message" class="form-control" name="message"></textarea></div>
-    <div class="mb-3"><button class="btn btn-primary text-center" type="submit">Send</button></div>
-</form>
-            </div>
-        </section>
-    </main>
-    <%- include("partials/footer") -%>
+<main class="page contact-us-page">
+  <section class="clean-block clean-form dark">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Keep In Touch</h2>
+        <p>Have an analytics need or want to know more about our services?&nbsp;<br>please write to us at&nbsp;&nbsp;and we will get back to you as soon as possible.<br><br></p>
+        <p><b>Email: </b><a href="admin@unarai.com?subject=feedback"> admin@unarai.com</a></p>
+      </div>
+      <form id="contactForm" name="sentMessage" action="/contact" method="post">
+                    <div class="control-group">
+                        <div class="form-floating controls mb-3"><input class="form-control" name="Name" type="text" id="name" required="" placeholder="Name"><label class="form-label" for="name">Name</label><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-floating controls mb-3"><input class="form-control" name="email" type="email" id="email" required="" placeholder="Email Address"><label class="form-label">Email Address</label><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-floating controls mb-3"><input class="form-control" name="phone" type="tel" id="phone" required="" placeholder="Phone Number"><label class="form-label">Phone Number</label><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-floating controls mb-3"><textarea class="form-control" name="message" id="message" data-validation-required-message="Please enter a message." required="" placeholder="Message" style="height: 150px;"></textarea><label class="form-label">Message</label><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div id="success"></div>
+                    <div class="mb-3"><button class="btn btn-primary" id="sendMessageButton" type="submit">Send</button></div>
+                </form>
+    </div>
+  </section>
+</main>
+<%- include("partials/footer") -%>
